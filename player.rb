@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Player
   attr_reader :name
   attr_accessor :cash
@@ -7,6 +9,7 @@ class Player
     @hand = Hand.new
   end
 
+  # rubocop:disable Naming/AccessorMethodName
   def get_bet
     self.cash += 10
   end
@@ -14,4 +17,5 @@ class Player
   def give_bet
     self.cash -= 10
   end
+  # rubocop:enable Naming/AccessorMethodName
 end

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class Hand
-  attr_accessor :score, :hand
+  attr_accessor :hand
 
   def initialize
     @hand = []
@@ -19,7 +21,7 @@ class Hand
   end
 
   def show_shadow_cards
-    @hand.each { |card| puts '(**-**)' }
+    @hand.each { |_card| puts '(**-**)' }
   end
 
   private

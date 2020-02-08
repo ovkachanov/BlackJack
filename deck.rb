@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Deck
   attr_reader :deck
 
@@ -7,9 +9,9 @@ class Deck
 
   def create_deck
     deck = []
-    ['♠','♥','♣','♦'].each do |suit|
-     (2..10).to_a.push('J','Q','K','A').each do |face|
-       deck << Card.new(suit, face)
+    ['♠', '♥', '♣', '♦'].each do |suit|
+      (2..10).to_a.push('J', 'Q', 'K', 'A').each do |face|
+        deck << Card.new(suit, face)
       end
     end
     deck.shuffle

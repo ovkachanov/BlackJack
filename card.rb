@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 class Card
   attr_reader :suit, :face
-  attr_accessor :value
 
   def initialize(suit, face)
     @suit = suit
@@ -9,8 +10,9 @@ class Card
   end
 
   def value
-   return 10 if %w(J Q K).include?(face)
-   return 1 if face == 'A'
-   face
+    return 10 if %w[J Q K].include?(face)
+    return 1 if face == 'A'
+
+    face
   end
 end

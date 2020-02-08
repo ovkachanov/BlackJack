@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Controller
   attr_reader :user, :dealer, :deck
 
@@ -7,6 +9,7 @@ class Controller
     @deck = Deck.new
   end
 
+  # rubocop:disable Metrics/BlockLength, Metrics/CyclomaticComplexity
   def start
     loop do
       puts "Выберите действие:\n1.Играть в BlackJack\n2.Выйти из игры"
@@ -41,6 +44,7 @@ class Controller
       end
     end
   end
+  # rubocop:enable Metrics/BlockLength, Metrics/CyclomaticComplexity
 
   private
 
