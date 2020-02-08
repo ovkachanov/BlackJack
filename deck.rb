@@ -14,4 +14,8 @@ class Deck
     end
     deck.shuffle
   end
+
+  def take
+    @deck.shift
+  end
 end

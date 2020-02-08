@@ -1,20 +1,25 @@
 class Player
   attr_reader :name
-  attr_accessor :money, :cards, :score
+  attr_accessor :cash
 
   def initialize(name)
     @name = name
-    @money = 100
-    @cards = []
-    @score = 0
+    @cash = 100
+    @hand = Hand.new
   end
 
-  def skip_move
+  def get_bet
+    self.cash += 10
   end
 
-  def add_card
+  def give_bet
+    self.cash -= 10
   end
 
-  def open_cards
+  private
+
+  def set_name!
+    puts 'Введите ваше имя'
+    self.name = gets.chomp.capitalize!
   end
 end
