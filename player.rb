@@ -2,8 +2,7 @@ class Player
   attr_reader :name
   attr_accessor :cash
 
-  def initialize(name)
-    @name = name
+  def initialize
     @cash = 100
     @hand = Hand.new
   end
@@ -14,12 +13,5 @@ class Player
 
   def give_bet
     self.cash -= 10
-  end
-
-  private
-
-  def set_name!
-    puts 'Введите ваше имя'
-    self.name = gets.chomp.capitalize!
   end
 end
