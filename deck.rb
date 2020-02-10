@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
 class Deck
-  attr_reader :deck
+  attr_reader :game_deck
 
   def initialize
-    @deck = create_deck
+    @game_deck = create_deck
   end
 
   def create_deck
-    deck = []
-    ['♠', '♥', '♣', '♦'].each do |suit|
+    game_deck = []
+    Card::SUITS.each do |suit|
       (2..10).to_a.push('J', 'Q', 'K', 'A').each do |face|
-        deck << Card.new(suit, face)
+        game_deck << Card.new(suit, face)
       end
     end
-    deck.shuffle
+    game_deck.shuffle
   end
 
   def take
-    @deck.shift
+    @game_deck.shift
   end
 end

@@ -1,34 +1,26 @@
 # frozen_string_literal: true
 
 class Hand
-  attr_accessor :hand
+  attr_accessor :card_collection
 
   def initialize
-    @hand = []
+    @card_collection = []
     @score = 0
   end
 
   def take_card!(deck)
-    @hand << deck.take
+    @card_collection << deck.take
   end
 
   def score
     score_ace
   end
 
-  def show_cards
-    @hand.each { |card| puts "(#{card.face}-#{card.suit})" }
-  end
-
-  def show_shadow_cards
-    @hand.each { |_card| puts '(**-**)' }
-  end
-
   private
 
   def score_ace
     score = 0
-    hand.each do |card|
+    card_collection.each do |card|
       score += card.value
       score += 10 if card.value == 1 && score + 10 <= 21
     end

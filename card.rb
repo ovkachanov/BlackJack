@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Card
+  SUITS = ['♠', '♥', '♣', '♦'].freeze
+
   attr_reader :suit, :face
 
   def initialize(suit, face)

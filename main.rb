@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative 'interface.rb'
 require_relative 'card.rb'
 require_relative 'deck.rb'
 require_relative 'hand.rb'
