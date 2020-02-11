@@ -2,6 +2,7 @@
 
 class Card
   SUITS = ['♠', '♥', '♣', '♦'].freeze
+  FACES = (2..10).to_a.push('J', 'Q', 'K', 'A').freeze
 
   attr_reader :suit, :face
 

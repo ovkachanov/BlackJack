@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Interface
+class Interface
   def show_main_info(user, dealer)
     show_user_info(user)
     show_cards(user)
@@ -12,17 +12,23 @@ module Interface
     puts "#{user.name} очки: #{user.hand.score}"
   end
 
+  def info_new_game
+    puts "Новая игра началась!"
+    puts '________________________________'
+  end
+
   def show_cards(obj)
     obj.hand.card_collection.each { |card| puts "(#{card.face}-#{card.suit})" }
   end
 
   def show_shadow_cards(obj)
-    obj.hand.card_collection.each { |_card| puts '(**-**)' }
+    obj.hand.card_collection.each { |card| puts '(**-**)' }
   end
 
   def set_name(user)
     puts 'Введите ваше имя'
-    user.name = gets.chomp.to_s.capitalize!
+    input = gets.chomp.to_s.capitalize!
+    user.name = input
   end
 
   def show_name_cash_info(user, dealer)

@@ -10,7 +10,7 @@ class Deck
   def create_deck
     game_deck = []
     Card::SUITS.each do |suit|
-      (2..10).to_a.push('J', 'Q', 'K', 'A').each do |face|
+      Card::FACES.each do |face|
         game_deck << Card.new(suit, face)
       end
     end
